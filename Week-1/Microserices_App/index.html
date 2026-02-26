@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retail App Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .container {
+            text-align: center;
+            width: 900px;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 40px;
+            font-size: 42px;
+            letter-spacing: 1px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            width: 300px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .card p {
+            margin-bottom: 25px;
+            color: #666;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            color: white;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .users-btn {
+            background: linear-gradient(135deg, #43cea2, #185a9d);
+        }
+
+        .products-btn {
+            background: linear-gradient(135deg, #ff9966, #ff5e62);
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 40px;
+            color: #eee;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🛍️ Retail Application Dashboard</h1>
+
+    <div class="cards">
+
+        <!-- Users Card -->
+        <div class="card">
+            <h2>👤 Users Service</h2>
+            <p>Manage customers, view user details and control access.</p>
+            <a href="/users" class="btn users-btn">Open Users</a>
+        </div>
+
+        <!-- Products Card -->
+        <div class="card">
+            <h2>📦 Products Service</h2>
+            <p>Browse products, update inventory and manage catalog.</p>
+            <a href="/products" class="btn products-btn">Open Products</a>
+        </div>
+
+    </div>
+
+    <footer>
+        Built using Spring Boot Microservices
+    </footer>
+</div>
+
+</body>
+</html>

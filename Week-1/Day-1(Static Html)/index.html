@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Static HTML Deployment on EC2 using HTTPD</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin:0;
+            background: linear-gradient(to right,#1e3c72,#2a5298);
+            color:#333;
+        }
+
+        header{
+            text-align:center;
+            padding:40px;
+            color:white;
+        }
+
+        .container{
+            width:80%;
+            margin:auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        h2{
+            color:#1e3c72;
+        }
+
+        .step{
+            margin:15px 0;
+            padding:15px;
+            border-left:5px solid #2a5298;
+            background:#f5f7ff;
+            border-radius:5px;
+        }
+
+        footer{
+            text-align:center;
+            padding:20px;
+            margin-top:20px;
+            color:white;
+        }
+
+        .badge{
+            display:inline-block;
+            padding:8px 15px;
+            background:#2a5298;
+            color:white;
+            border-radius:20px;
+            margin-top:10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Static HTML Deployment</h1>
+    <p>Deployed in AWS EC2 Linux Instance using Apache HTTPD</p>
+    <div class="badge">My First Web Deployment</div>
+</header>
+
+<div class="container">
+
+    <h2>Project</h2>
+    <p>
+        This project demonstrates how a static HTML page can be deployed on an AWS EC2 Linux instance
+        using Apache HTTPD server. The web server hosts the HTML file and serves it over the internet.
+    </p>
+
+    <h2>⚙️ Steps Followed</h2>
+
+    <div class="step">1️⃣ Launch EC2 Linux instance</div>
+    <div class="step">2️⃣ Connect using SSH</div>
+    <div class="step">3️⃣ Install Apache HTTPD server</div>
+    <div class="step">4️⃣ Start and enable HTTPD service</div>
+    <div class="step">5️⃣ Place index.html inside /var/www/html</div>
+    <div class="step">6️⃣ Access using Public IP</div>
+
+    <h2>🌐 Technologies Used</h2>
+    <ul>
+        <li>AWS EC2</li>
+        <li>Linux</li>
+        <li>Apache HTTPD</li>
+    </ul>
+
+    <h2>Outcome</h2>
+    <p>
+        Successfully hosted a static webpage on EC2 and accessed it via browser using public IP,
+        demonstrating basic web deployment fundamentals.
+    </p>
+
+</div>
+
+<footer>
+    Created by Bharath | DevOps Learning Journey
+</footer>
+
+</body>
+</html>
