@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springapp
+  labels: 
+    app: springboot
+spec:
+  replicas: 3
+  selector:
+    matchLabels: 
+      app: springboot
+  template:
+    metadata:
+      labels:
+        app: springboot
+    spec:
+      containers:
+      - name: springcon
+        image: jelastic/springboot:zulujdk-21.0.10-almalinux-9
+        ports:
+        - containerPort: 8080
+
+        env:
+        - name: APP_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: config-data
+              key: APP_NAME
+        - name: ENVIRONMENT
+          valueFrom:
+            configMapKeyRef:
+              name: config-data
+              key: ENVIRONMENT
+        - name: APP_MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: config-data
+              key: APP_MESSAGE
+
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: secretdata
+              key: DB_PASSWORD

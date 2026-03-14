@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-dep
+  labels:
+    app: bhapp-dep
+spec:
+  replicas: 3
+  selector: 
+    matchLabels: 
+      app: bhapp
+  template:
+    metadata:
+      labels:
+        app: bhapp
+    spec:
+      containers:
+      - name: springcon
+        image: bharath701/spring_application:1.0
+        ports:
+        - containerPort: 8080
+        env:
+        - name: APP_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: config-data
+              key: APP_NAME
+        - name: ENVIRONMENT
+          valueFrom:
+            configMapKeyRef:
+              name: config-data
+              key: ENVIRONMENT
+        - name: APP_MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: config-data
+              key: APP_MESSAGE
+
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: secretdata
+              key: DB_PASSWORD
+

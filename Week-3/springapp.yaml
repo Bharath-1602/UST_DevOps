@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springapp
+  labels:
+    app: springbootapp
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: springboot
+
+  template:
+    metadata:
+      labels:
+        app: springboot
+
+    spec:
+      containers:
+      - name: springbootcon
+        image: uz1nee/springboot-twitter-linux:latest
+        ports:
+        - containerPort: 8080

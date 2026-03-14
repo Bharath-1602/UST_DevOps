@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-ser
+spec:
+  selector:
+    app: bhapp
+  ports:
+  - port: 80
+    targetPort: 8080
+  type: NodePort

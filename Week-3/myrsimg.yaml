@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myrsimg
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dockerimg
+  template:
+    metadata:
+      name: dockerpod
+      labels:
+        app: dockerimg
+    spec:
+      containers:
+      - name: myimgcon
+        image: neerajbala/cstay:frontendv1
+        ports:
+        - containerPort: 80
+
