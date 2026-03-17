@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: host-3
+spec:
+  containers:
+  - name: con1
+    image: nginx
+    volumeMounts:
+    - mountPath: /host-file
+      name: host-volume
+  volumes:
+  - name: host-volume
+    hostPath:
+      path: /data/app/sample.txt
+      type: File
